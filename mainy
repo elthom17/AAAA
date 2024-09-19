@@ -1,0 +1,39 @@
+#ifndef SORTEDARRAYTYPELIST_H
+#define SORTEDARRAYTYPELIST_H
+#include <iostream>
+using namespace std;
+
+// Define a structure to use as the list item
+struct ListItem {
+  int key;
+  float theData;
+};
+
+#define MAX_SIZE   50     // Define the maximum length of the list
+class SortedArrayTypeList{
+private:
+  int head;             // Index to the head of the list
+  ListItem theList[MAX_SIZE];   // The list
+
+public:
+  SortedArrayTypeList();            // Class constructor
+  ~SortedArrayTypeList();            // Class destuctor
+  void ClearList();               // Remove all items from the list
+  int Insert(int key, float f);         // Add an item to the list
+  int Delete(int key);             // Delete an item from the list
+  int Search(int key, float* retVal) const;   // Search for an item in the list
+  int ListLength() const;            // Return number of items in list
+  int isEmpty() const;             // Return true if list is empty
+  int isFull() const;              // Return true if list is full
+  void PrintList() const;            // Print all items in the list
+};
+
+
+// Define TRUE and FALSE if they have not already been defined
+#ifndef FALSE
+#define FALSE (0)
+#endif
+#ifndef TRUE
+#define TRUE (!FALSE)
+#endif
+#endif // End of list header
